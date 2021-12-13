@@ -3,8 +3,8 @@ var http = require('http');
 var request = require('request');
 
 var urlRegex = /^https?/;
-var sizeLimit = process.env.SIZE_LIMIT || 512 * 1024;
-var requestsLimit = process.env.REQ_LIMIT || 15;
+var sizeLimit = process.env.SIZE_LIMIT || 10000 * 512 * 1024;
+var requestsLimit = process.env.REQ_LIMIT || 100000;
 var copyHeaders = ['user-agent', 'content-type'];
 var reqIPs = [];
 
@@ -122,4 +122,4 @@ http.createServer(function (req, res) {
      }
   });
 
-}).listen(process.env.PORT)
+}).listen(18401)
